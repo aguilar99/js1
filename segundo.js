@@ -4,7 +4,13 @@ function mensaje(){
 
 window.addEventListener('DOMContentLoaded', () => {
     
-    document.querySelector("button").addEventListener("click",mensaje);
+    //document.querySelector("button").addEventListener("click",mensaje);
+    console.log(location.href);
+    
+    document.querySelector("button").addEventListener("click",()=>{
+        setTimeout(()=>{location.assign("https://www.google.es/")},5000);
+        //location.assign("https://www.google.es/");
+    });
 
     document.querySelector("button:nth-child(2)").addEventListener("click",(evt)=>{
         //alert(evt.type);
@@ -18,4 +24,8 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     /*const primero = document.querySelector('article#primero');
     primero.querySelector("div")*/
+
+    document.querySelector('button:last-of-type').addEventListener("click",(evt)=>{
+        evt.target.classList.toggle('estilos');
+    });
 });
